@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: The First
         run: |
-          echo Hello
+          echo bonjour
           return 1
 
   test2:
@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: The Second
-        run: echo Good Bye
+        run: echo aurevoir
