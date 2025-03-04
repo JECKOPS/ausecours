@@ -35,7 +35,7 @@ jobs:
           pwd
 
       - name: Build and push to GH Package
-        uses: docker/build-push-action@V4
+        uses: docker/build-push-action@v4
         with: 
           context: backend
           push: true
