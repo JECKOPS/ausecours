@@ -1,7 +1,7 @@
 name: deploiement aws
 
 on:
-  workflows_call
+  workflow_call
 
 jobs:
   update-server:
