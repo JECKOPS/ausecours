@@ -28,3 +28,11 @@ jobs:
     permissions:
       contents: read
       packages: write
+
+  CARRATIE:
+    needs: [biterie]
+    uses: ./.github/workflows/deploy.yaml
+    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
