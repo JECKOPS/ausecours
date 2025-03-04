@@ -6,16 +6,15 @@ on:
       - main
 
 jobs:
-  test:
+  test1:
     runs-on: ubuntu-latest
     steps:
       - name: The First
-        run: |
-          echo bonjour
-          return 1
+        run: echo bonjour
+        
 
   test2:
-    needs: [test]
+    needs: [test1]
     runs-on: ubuntu-latest
     steps:
       - name: The Second
