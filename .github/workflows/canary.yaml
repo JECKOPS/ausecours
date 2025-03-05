@@ -25,7 +25,7 @@ jobs:
         with:
           inlineScript: |
             #!/bin/bash
-            az groupe create --name ${{env.ResourceGroupName}} --location ${{env.ResourceGroupLocation}}
+            az group create --name ${{env.ResourceGroupName}} --location ${{env.ResourceGroupLocation}}
             echo "Azure resource group created"
     
       - name: Azure ARM Deploy
