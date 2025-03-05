@@ -17,6 +17,7 @@ jobs:
           port: ${{secrets.PORT}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
+          key: ${{secrets.KEY}}
 
           source: "./docker-compose.yaml"
 
@@ -35,6 +36,7 @@ jobs:
           port: ${{secrets.PORT}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
+          key: ${{secrets.KEY}}
 
           script: |
             docker pull ghcr.io/jeckops/back-ausecours:latest
