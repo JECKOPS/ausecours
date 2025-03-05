@@ -33,3 +33,8 @@ jobs:
     needs: [biterie]
     uses: ./.github/workflows/deploy.yaml
     secrets: inherit
+
+  CARRATIEV2:
+    needs: [CARRATIE]
+    uses: ./.github/workflows/canary.yaml
+    secrets: inherit
