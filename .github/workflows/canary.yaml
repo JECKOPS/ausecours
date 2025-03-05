@@ -7,8 +7,8 @@ jobs:
   create_vm_up_compose:
     runs-on: ubuntu-latest
     env:
-      ResourceGroupName: micsi24sortitoutseul
-      ResourceGroupLocation: francecentral
+      ResourceGroupName: "micsizizi"
+      ResourceGroupLocation: "francecentral"
 
     steps:
       - name: Azure Login
@@ -31,7 +31,7 @@ jobs:
       - name: Azure ARM Deploy
         uses: azure/arm-deploy@v2
         with:
-          resourceGroupName: micsi24sortitoutseul
+          resourceGroupName: micsizizi
           template: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/refs/heads/master/quickstarts/microsoft.compute/vm-simple-linux/azuredeploy.json
           parameters: adminUsername=${{secrets.AZURE_VM_LOGIN}} adminPasswordOrKey=${{secrets.AZURE_VM_PASSWORD}} vmName="Canary-alois" vmSize="Standard_B2s"
       
