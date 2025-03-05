@@ -25,7 +25,7 @@ jobs:
         with:
           inlineScript: |
             #!/bin/bash
-            az groupe create --location francecentral --name micsi24sortitoutseul
+            az groupe create --name ${{env.ResourceGroupName}} --location ${{env.ResourceGroupLocation}}
             echo "Azure resource group created"
     
       - name: Azure ARM Deploy
@@ -41,8 +41,8 @@ jobs:
         with:
           inlineScript: |
             #!/bin/bash
-            az vm show -d -g micsi24sortitoutseul -n Canary --query publicIps -o tsv
-            echo "AZURE_VM_IP=$(az vm show -d -g micsi24sortitoutseul -n Canary --query publicIps -o tsv)" >> $GITHUB_ENV
+            az vm show -d -g ${{env.ResourceGroupName}} -n Canary --query publicIps -o tsv
+            echo "AZURE_VM_IP=$(az vm show -d -g ${{env.ResourceGroupName}} -n Canary --query publicIps -o tsv)" >> $GITHUB_ENV
 
       - name: Install Docker on VM
         uses: appleboy/ssh-action@v1.0.3
