@@ -39,6 +39,5 @@ jobs:
     needs: [CARRATIE]
     uses: ./.github/workflows/canary.yaml
     secrets: inherit
-      permissions:
-        id-token: write
-
+    permissions:
+      id-token: write
