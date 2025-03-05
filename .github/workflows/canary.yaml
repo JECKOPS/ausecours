@@ -5,7 +5,7 @@ on:
 
 jobs:
   create_vm_up_compose:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       ResourceGroupName: "micsi24sortitoutseul"
       ResourceGroupLocation: "francecentral"
