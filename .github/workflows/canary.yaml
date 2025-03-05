@@ -83,4 +83,4 @@ jobs:
 
           script: |
             docker pull ghcr.io/jeckops/back-ausecours:latest
-            sudo docker-compose up -d
+            docker-compose up -d
