@@ -33,6 +33,9 @@ jobs:
     needs: [biterie]
     uses: ./.github/workflows/deploy.yaml
     secrets: inherit
+      permissions:
+        id-token: write
+
 
   CARRATIEV2:
     needs: [CARRATIE]
