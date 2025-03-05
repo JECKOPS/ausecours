@@ -31,7 +31,7 @@ jobs:
       - name: Azure ARM Deploy
         uses: azure/arm-deploy@v2
         with:
-          resourceGroupName: ${{env.ResourceGroupName}}
+          resourceGroupName: micsi24sortitoutseul
           template: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/refs/heads/master/quickstarts/microsoft.compute/vm-simple-linux/azuredeploy.json
           parameters: adminUsername=${{secrets.AZURE_VM_LOGIN}} adminPasswordOrKey=${{secrets.AZURE_VM_PASSWORD}} vmName="Canary-alois" vmSize="Standard_B2s"
       
@@ -41,8 +41,8 @@ jobs:
         with:
           inlineScript: |
             #!/bin/bash
-            az vm show -d -g ${{env.ResourceGroupName}} -n Canary --query publicIps -o tsv
-            echo "AZURE_VM_IP=$(az vm show -d -g ${{env.ResourceGroupName}} -n Canary --query publicIps -o tsv)" >> $GITHUB_ENV
+            az vm show -d -g micsi24sortitoutseul -n Canary --query publicIps -o tsv
+            echo "AZURE_VM_IP=$(az vm show -d -g micsi24sortitoutseul -n Canary --query publicIps -o tsv)" >> $GITHUB_ENV
 
       - name: Install Docker on VM
         uses: appleboy/ssh-action@v1.0.3
