@@ -7,8 +7,8 @@ jobs:
   create_vm_up_compose:
     runs-on: ubuntu-latest
     env:
-      ResourceGroupName: "micsi24sortitoutseul"
-      ResourceGroupLocation: "francecentral"
+      ResourceGroupName: micsi24sortitoutseul
+      ResourceGroupLocation: francecentral
 
     steps:
       - name: Azure Login
