@@ -19,7 +19,7 @@ jobs:
           password: ${{secrets.PASSWORD}}
           key: ${{secrets.KEY}}
 
-          source: "./docker-compose.yaml"
+          source: "./docker-compose.yml"
 
   deploys-compose:
     needs: [update-server]
