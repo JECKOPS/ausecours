@@ -16,10 +16,11 @@ jobs:
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
           username: ${{secrets.USERNAME}}
-          password: ${{secrets.PASSWORD}}
+          
           key: ${{secrets.KEY}}
 
           source: "./docker-compose.yml"
+          target: "."
 
   deploys-compose:
     needs: [update-server]
@@ -35,7 +36,7 @@ jobs:
           host: ${{secrets.HOST}}
           port: ${{secrets.PORT}}
           username: ${{secrets.USERNAME}}
-          password: ${{secrets.PASSWORD}}
+          
           key: ${{secrets.KEY}}
 
           script: |
