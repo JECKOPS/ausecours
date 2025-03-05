@@ -25,7 +25,7 @@ jobs:
         with:
           inlineScript: |
             #!/bin/bash
-            az groupe create --name francecentral --location micsi24sortitoutseul
+            az groupe create --location francecentral --name micsi24sortitoutseul
             echo "Azure resource group created"
     
       - name: Azure ARM Deploy
