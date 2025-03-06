@@ -23,7 +23,7 @@ services:
       BDD_PORT: 3306
 
   master-front:
-    container_name: master-back
+    container_name: master-front
     image: ghcr.io/jeckops/front-ausecours:latest
     restart: always
     ports:
