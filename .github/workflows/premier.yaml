@@ -10,7 +10,7 @@ on:
 
 jobs:
   backend:
-    if: ${{github.event_name == 'pull_request}}
+    if: ${{github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -143,18 +143,19 @@ jobs:
       contents: read
       packages: write
 
-  CARRATIE:
-    needs: [BITERIE]
-    uses: ./.github/workflows/deploy.yaml
-    secrets: inherit
-
-
-  CARRATIEV2:
-    needs: [CARRATIE]
-    uses: ./.github/workflows/canary.yaml
-    secrets: inherit
-    permissions:
-      id-token: write
+#
+#  CARRATIE:
+#    needs: [BITERIE]
+#     uses: ./.github/workflows/deploy.yaml
+#    secrets: inherit
+#
+#
+#  CARRATIEV2:
+#    needs: [CARRATIE]
+#    uses: ./.github/workflows/canary.yaml
+#    secrets: inherit
+#    permissions:
+#      id-token: write
 
 
  
