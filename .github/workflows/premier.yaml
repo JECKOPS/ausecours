@@ -1,4 +1,4 @@
-name: Test
+name: test
 
 on:
   push:
@@ -7,10 +7,10 @@ on:
   pull_request:
     branches:
       - main
-      
+
 jobs:
   backend:
-    if: ${{github.event_name == 'push'}}
+    if: ${{github.event_name == 'pull_request}}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -135,8 +135,8 @@ jobs:
         run: docker compose -f docker-compose-build.yml down
 
 
-  biterie:
-    needs: [frontend]
+  BITERIE:
+    if: ${{github.event_name == 'push'}}
     uses: ./.github/workflows/ghcr.yaml
     secrets: inherit
     permissions:
@@ -144,7 +144,7 @@ jobs:
       packages: write
 
   CARRATIE:
-    needs: [biterie]
+    needs: [BITERIE]
     uses: ./.github/workflows/deploy.yaml
     secrets: inherit
 

@@ -1,4 +1,4 @@
-name: deploiement aws
+name: deploiement
 
 on:
   workflow_call

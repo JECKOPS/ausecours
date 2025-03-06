@@ -9,14 +9,9 @@ env:
   IMAGE_NAME: ${{github.repository}}
 
 jobs:
-  bide:
+  bite:
     runs-on: ubuntu-latest
     steps: 
-
-      - name: just for test 1
-        run: |
-            ls -al
-            pwd
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -27,21 +22,17 @@ jobs:
           registry: ${{env.REGISTRY}}
           username: ${{github.actor}}
           password: ${{secrets.BITE_PAT}}
-      
 
-      - name: just for test 2
-        run: |
-          ls -al
-          pwd
-
-      - name: Build and push to GH Package
+      - name: Build and push to GH Package back
         uses: docker/build-push-action@v4
         with: 
           context: backend
           push: true
           tags: ${{env.REGISTRY}}/jeckops/back-ausecours:latest
 
-      - name: just for test 3
-        run: |
-            ls -al
-            pwd
+      - name: Build and push to GH Package front
+        uses: docker/build-push-action@v4
+        with: 
+          context: frontend
+          push: true
+          tags: ${{env.REGISTRY}}/jeckops/front-ausecours:latest
