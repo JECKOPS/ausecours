@@ -147,7 +147,7 @@ jobs:
 
   CARRATIE:
     needs: [BITERIE]
-     uses: ./.github/workflows/deploy.yaml
+    uses: ./.github/workflows/deploy.yaml
     secrets: inherit
 
 
