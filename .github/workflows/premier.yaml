@@ -6,8 +6,13 @@ on:
       - main
 
 jobs:
-  test1:
+  Backend:
+    if: ${{github.event_name == 'pull_request'}}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+        
     steps:
       - name: The First
         run: echo bonjour
@@ -41,3 +46,7 @@ jobs:
     secrets: inherit
     permissions:
       id-token: write
+
+
+ 
+  
