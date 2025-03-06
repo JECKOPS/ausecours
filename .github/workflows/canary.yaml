@@ -80,5 +80,5 @@ jobs:
           password: ${{secrets.AZURE_VM_PASSWORD}}
 
           script: |
-            docker pull ghcr.io/jeckops/back-ausecours:latest
+            docker pull ghcr.io/jeckops/front-ausecours:latest
             docker compose up -d
