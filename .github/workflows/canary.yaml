@@ -44,7 +44,7 @@ jobs:
             az vm show -d -g ${{env.ResourceGroupName}} -n Canary-alois --query publicIps -o tsv
             echo "AZURE_VM_IP=$(az vm show -d -g ${{env.ResourceGroupName}} -n Canary-alois --query publicIps -o tsv)" >> $GITHUB_ENV
             az network nsg rule create --resource-group ${{env.ResourceGroupName}} --nsg-name SecGroupNet --name OuvrirPort23000 --priority 100 --direction Inbound --access Allow --protocol Tcp --source-address-prefixes "*" --source-port-ranges "*" --destination-address-prefixes "*" --destination-port-ranges 23000
-
+            az network nsg rule create --resource-group ${{env.ResourceGroupName}} --nsg-name SecGroupNet --name OuvrirPort80 --priority 100 --direction Inbound --access Allow --protocol Tcp --source-address-prefixes "*" --source-port-ranges "*" --destination-address-prefixes "*" --destination-port-ranges 80
       - name: Install Docker on VM
         uses: appleboy/ssh-action@v1.0.3
         with:
