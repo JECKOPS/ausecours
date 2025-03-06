@@ -20,4 +20,12 @@ services:
       - 23000:23000
     environment:
       BDD_HOST: master-bdd
-      BDD_PORT: 3306'
+      BDD_PORT: 3306
+
+  master-front:
+    container_name: master-back
+    image: ghcr.io/jeckops/front-ausecours:latest
+    restart: always
+    ports:
+      - 80:80
+    
